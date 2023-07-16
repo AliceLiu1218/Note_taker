@@ -10,11 +10,11 @@ const path = require('path');
 //app.use(express.static('public'));
 
 home.get('/', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/index.html'))
+    res.sendFile(path.join(__dirname, '../public/index.html'))
 );
 
 home.get('/notes', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/notes.html'))
+    res.sendFile(path.join(__dirname, '../public/notes.html'))
 );
 
 

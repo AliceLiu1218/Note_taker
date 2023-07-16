@@ -23,7 +23,7 @@ const homeRouter = require('./homeRoutes');
 const app = express();
 
 app.use('/', homeRouter);
-//app.use('/note', noteRouter);
+app.use('/api', noteRouter);
 
 
 module.exports = app;
