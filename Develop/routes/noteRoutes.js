@@ -1,11 +1,19 @@
 const notes = require('express').Router();
-const notesRecord = require('../db/db.json');
+
 const fs = require('fs');
 const uuid = require('../helpers/uuid');
 
 
 notes.get('/notes', (req, res) => {
-    res.status(200).json(notesRecord);
+    // res.status(200).json(notesRecord);
+    // console.log("get method was made")
+
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        
+        const notesRecord = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+        res.status(200).json(notesRecord);
+    })
+    
 });
 
 notes.post('/notes', (req, res) => {
